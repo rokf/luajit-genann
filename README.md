@@ -37,7 +37,24 @@ Now it should be ready to use.
   the full transformed input and output tables (same size ofc), the number of loops to do and the rate
   to train at.
 
-#### Notice
+#### Activation functions
 
-I still have to wrap the different activation functions shipped with Genann (it is probably easy).
-You're trapped with the defaults for now *hehe*.
+They're contained inside the `act` table. The ANN structure returned from `init` has two fields which are used
+to set activation functions. By default they are set as `sigmoid_cached`. The fields are `activation_hidden`
+and `activation_output`.
+
+Genann contains 4, you could also roll your own (a C function that accepts a `double` and returns a `double`).
+
+- sigmoid
+- sigmoid_cached
+- linear
+- threshold
+
+Here is an example
+
+```Lua
+local genann = require 'genann'
+local ann = genann.init(2,1,2,1)
+ann.activation_hidden = genann.act.sigmoid_cached
+ann.activation_output = genann.act.sigmoid
+```

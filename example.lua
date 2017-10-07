@@ -3,6 +3,9 @@ local genann = require 'genann'
 
 local ann = genann.init(2,1,2,1)
 
+ann.activation_hidden = genann.act.sigmoid_cached
+ann.activation_output = genann.act.sigmoid_cached
+
 local inputs = genann.trans({
   {0,0},
   {0,1},
@@ -31,6 +34,6 @@ print(genann.run(ann,{0,1})[1])
 print(genann.run(ann,{1,0})[1])
 print(genann.run(ann,{1,1})[1])
 
-genann.write(ann,"xornet.nn")
+-- genann.write(ann,"xornet.nn")
 
 genann.free(ann)

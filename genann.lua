@@ -96,6 +96,15 @@ function M.write(nn,file)
   end
 end
 
+-- activation functions
+
+M.act = {
+  sigmoid = genann.genann_act_sigmoid,
+  sigmoid_cached = genann.genann_act_sigmoid_cached,
+  linear = genann.genann_act_linear,
+  threshold = genann.genann_act_threshold
+}
+
 -- additional functions
 
 function M.trans(t)

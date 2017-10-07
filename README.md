@@ -3,10 +3,17 @@
 This is a `LuaJIT` FFI wrapper for the artificial neural network library `Genann`.
 It should be really simple to use.
 
+#### Installation
+
 The `Makefile` is there to build the `libgenann.so` shared library.
 Run `make`, followed by `sudo make install` and the shared library will be placed inside `/usr/local/lib`.
 
 Make sure you clone this repository with the `recursive` flag or `genann` won't get cloned (`git clone --recursive https://github.com/rokf/luajit-genann`).
+
+After that you can install the Lua module via `rockspec` like `sudo luarocks-5.1 install genann-dev-1.rockspec`.
+You could also just type `sudo luarocks-5.1 make` and it will get installed from the local files.
+
+Now it should be ready to use.
 
 #### Functions
 
@@ -34,5 +41,3 @@ Make sure you clone this repository with the `recursive` flag or `genann` won't 
 
 I still have to wrap the different activation functions shipped with Genann (it is probably easy).
 You're trapped with the defaults for now *hehe*.
-
-The `rockspec` file is also missing. Will be added asap.

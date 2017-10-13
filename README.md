@@ -44,6 +44,7 @@ to set activation functions. By default they are set as `sigmoid_cached`. The fi
 and `activation_output`.
 
 Genann contains 4, you could also roll your own (a C function that accepts a `double` and returns a `double`).
+Because LuaJIT does lots of magic they can also be written in plain Lua (look at examples).
 
 - sigmoid
 - sigmoid_cached
